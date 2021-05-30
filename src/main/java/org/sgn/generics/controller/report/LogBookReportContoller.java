@@ -1,10 +1,10 @@
-package org.sgn.generics;
+package org.sgn.generics.controller.report;
 
 import java.util.List;
 import org.sgn.generics.common.form.ListResponseEntity;
 import org.sgn.generics.common.form.SingleResponseEntity;
-import org.sgn.generics.iservice.ICensusReportService;
-import org.sgn.generics.model.Census;
+import org.sgn.generics.common.model.Census;
+import org.sgn.generics.iservice.report.ICensusReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class SampleController {
+public class LogBookReportContoller {
+
 	
 	@Autowired
 	private ICensusReportService iCensusService;
 
 	@RequestMapping("/")
 	public String index() {
-		return "Hello Chen Jian! >>>> " + iCensusService.getCount();
+		return "Hello World!" + iCensusService.getCount();
 	}
 	
 	@RequestMapping(value="/record/{serialId}")
@@ -36,12 +37,6 @@ public class SampleController {
 	@RequestMapping(value="/record/ag/{area}/{grp}")
 	public ResponseEntity<ListResponseEntity<Census>> getByAreaGroup(@PathVariable(name = "area") String area, @PathVariable(name = "grp") String grp) {
 		List<Census> census = iCensusService.getByAreaGroup(area, grp);
-		
-		if(census != null) {
-			System.out.println(census.size());
-		} else {
-			System.out.println("no record found");
-		}
 		
 		ListResponseEntity<Census> lre = new ListResponseEntity<Census>().payload(census).status(HttpStatus.OK.value()).message((census == null || census.isEmpty()) ? "No records found" : (census.size() + " records found"));
 		

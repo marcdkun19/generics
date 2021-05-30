@@ -19,9 +19,6 @@
 	<profiles>
 		<profile>
 			<id>marc</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
 			<properties>
 				<build.profile.id>marc</build.profile.id>
 				<profileActive>marc</profileActive>

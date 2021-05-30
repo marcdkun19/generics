@@ -1,4 +1,4 @@
-package org.sgn.generics.model;
+package org.sgn.generics.common.model;
 
 import javax.persistence.*;
 import lombok.Data;

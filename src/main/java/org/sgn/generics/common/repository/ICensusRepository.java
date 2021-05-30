@@ -1,8 +1,8 @@
-package org.sgn.generics.repository;
+package org.sgn.generics.common.repository;
 
 import java.util.List;
 
-import org.sgn.generics.model.Census;
+import org.sgn.generics.common.model.Census;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

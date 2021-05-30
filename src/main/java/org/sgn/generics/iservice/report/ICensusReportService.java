@@ -1,7 +1,9 @@
-package org.sgn.generics.iservice;
+package org.sgn.generics.iservice.report;
 
 import java.util.List;
-import org.sgn.generics.model.Census;
+
+import org.sgn.generics.common.iservice.IBaseService;
+import org.sgn.generics.common.model.Census;
 
 public interface ICensusReportService extends IBaseService {
 

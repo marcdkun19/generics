@@ -1,4 +1,4 @@
-package org.sgn.generics.model;
+package org.sgn.generics.common.model;
 
 import java.io.Serializable;
 
